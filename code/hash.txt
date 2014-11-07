@@ -1,1 +1,15 @@
+
+	int i;
+	Record aim_rec;
+	char* dir = "C:\\record.hash";
+
+	create_hash_file(dir, REC_LEN, 7);
+	printf("hash file create successfull!\n");
+
+	FILE* fp = NULL;
+	fp = open_hash_file(dir);
+	for(i = 0; i < sizeof(rec)/sizeof(Record); i++)
+	{
+		write_hash_file(fp, &rec[i], rec[i].key);
+	}
 aadd
